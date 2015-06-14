@@ -9,6 +9,7 @@ import android.app.*;
 import android.content.Intent;
 import android.database.DataSetObserver;
 import android.graphics.Color;
+import android.util.Log;
 import android.view.*;
 import android.widget.*;
 
@@ -152,6 +153,7 @@ public abstract class CoursesActivity extends ListActivity implements ListAdapte
 		
 		@Override
 		public void onDestroyActionMode(ActionMode mode) {
+            getActionBar().show();
 			int i=0;
 			View child = getListView().getChildAt(0);
 			while (child != null) {
@@ -164,6 +166,7 @@ public abstract class CoursesActivity extends ListActivity implements ListAdapte
 		@Override
 		public boolean onCreateActionMode(ActionMode mode, Menu menu) {
 			getMenuInflater().inflate(R.menu.cab_courses, menu);
+            getActionBar().hide();
 			return true;
 		}
 		
